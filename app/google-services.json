@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "622940394556",
+    "firebase_url": "https://bookticket2-b823e.firebaseio.com",
+    "project_id": "bookticket2-b823e",
+    "storage_bucket": "bookticket2-b823e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622940394556:android:7c6c80bd504aad71",
+        "android_client_info": {
+          "package_name": "com.example.nhom23.bookticket2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "622940394556-s88vokld9nkon7oeomo6l70f1ht88irh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nhom23.bookticket2",
+            "certificate_hash": "9c5c9ba9f85a086471a032ba52fd517f099d4994"
+          }
+        },
+        {
+          "client_id": "622940394556-e4q2mcqf6004r9pdh9fbu4kla7gufh3l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8NV8Nd6cLYJjWkGi_QxbNynL5qmyeUJw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "622940394556-e4q2mcqf6004r9pdh9fbu4kla7gufh3l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
