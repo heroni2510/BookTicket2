@@ -3,14 +3,14 @@ package com.example.nhom23.bookticket2.model;
 public class Bus {
     private  String name;
     private  String numberPlate;
-    private  Integer seats;
+    //private  Integer seats;
     private  String busCompany;
-
+    private String id_B;
     public Bus(){}
     public Bus(String name, String numberPlate, String busCompany){
         this.name=name;
         this.numberPlate=numberPlate;
-        this.seats=seats;
+        //this.seats=seats;
         this.busCompany=busCompany;
     }
 
@@ -30,9 +30,9 @@ public class Bus {
         return numberPlate;
     }
 
-    public Integer getSeats() {
-        return seats;
-    }
+//    public Integer getSeats() {
+//        return seats;
+//    }
 
     public void setBusCompany(String busCompany) {
         this.busCompany = busCompany;
@@ -42,7 +42,7 @@ public class Bus {
         this.numberPlate = numberPlate;
     }
 
-    public void setSeats(Integer seats) {
-        this.seats = seats;
-    }
+//    public void setSeats(Integer seats) {
+//        this.seats = seats;
+//    }
 }

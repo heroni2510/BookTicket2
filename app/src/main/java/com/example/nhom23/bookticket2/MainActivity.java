@@ -1,11 +1,12 @@
 package com.example.nhom23.bookticket2;
 
+import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,13 +16,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.nhom23.bookticket2.model.Bus;
-import com.example.nhom23.bookticket2.model.BusCompany;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
+
 
 
 public class MainActivity extends AppCompatActivity
@@ -34,25 +31,31 @@ DatabaseReference mData, mBusCom;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 //        User user = new User();
-        //String KeyID = FirebaseDatabase.getInstance().getReference().push().getKey();
-        //BusCompany busCompany = new BusCompany(KeyID,"Quoc Hoang","091100017","Ha Noi");
-        //FirebaseDatabase.getInstance().getReference().child("BusCompany").child(KeyID).setValue(busCompany);
+        //        String KeyID = FirebaseDatabase.getInstance().getReference().push().getKey();
+       // BusCompany busCompany = new BusCompany(KeyID,"Phuong Trang","19006067","Ho Chi Minh");
+       // FirebaseDatabase.getInstance().getReference().child("BusCompany").child(KeyID).setValue(busCompany);
+        //Route route = new Route("Ho Chi Minh","Dong Thap","-LQJrj80dcM_G1SjDE_p","95000","14:30",KeyID);
+        //FirebaseDatabase.getInstance().getReference().child("Route").push().setValue(route);
+//        FirebaseDatabase.getInstance().getReference().child("BusCompany").child("-LQJolpDQmQl81Nvu4nB").addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                BusCompany a = dataSnapshot.getValue(BusCompany.class);
+//               // Toast.makeText(MainActivity.this,a.getName(),Toast.LENGTH_SHORT).show();
+//                Bus bus = new Bus("001","56H1511","-LQJolpDQmQl81Nvu4nB");
+//                FirebaseDatabase.getInstance().getReference().child("Bus").push().setValue(bus);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
 
-        FirebaseDatabase.getInstance().getReference().child("BusCompany").child("-LQCp_M1D5L1-dktigrf").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                BusCompany a = dataSnapshot.getValue(BusCompany.class);
-               // Toast.makeText(MainActivity.this,a.getName(),Toast.LENGTH_SHORT).show();
-                Bus bus = new Bus("001","66L11",a.getID_BC());
-                FirebaseDatabase.getInstance().getReference().child("Bus").push().setValue(bus);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
+        Fragment fragment = SelectRouteFragment.newInstance();
+        //getSupportActionBar().setTitle(0);
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frame , fragment);
+        fragmentTransaction.commit();
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
