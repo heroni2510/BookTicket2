@@ -21,7 +21,7 @@
             android:layout_marginEnd="84dp"
             android:ems="10"
             android:hint="Input Source"
-            android:inputType="textPersonName"
+            android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,7 +33,7 @@
             android:layout_marginEnd="84dp"
             android:ems="10"
             android:hint="Input Destination"
-            android:inputType="textPersonName"
+            android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextSource"
             tools:ignore="MissingConstraints" />

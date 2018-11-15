@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".BookConfirm">
+
+
+        <LinearLayout
+            android:id="@+id/confirm_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="211dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="192dp"
+                    android:layout_marginTop="@dimen/five_dp"
+                    android:layout_weight="1.9"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="Company"
+                        android:textSize="@dimen/confirm_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="From"
+                        android:textSize="@dimen/confirm_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="To"
+                        android:textSize="@dimen/confirm_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="Departure"
+                        android:textSize="@dimen/confirm_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="Arrival"
+                        android:textSize="@dimen/confirm_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="Price"
+                        android:textSize="@dimen/confirm_text_size" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="Created On"
+                        android:textSize="@dimen/confirm_text_size" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="196dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@android:color/darker_gray" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="192dp"
+                    android:layout_marginTop="@dimen/five_dp"
+                    android:layout_weight="1.9"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/company_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Phuong Trang"
+                        android:textSize="@dimen/confirm_text_size" />
+
+                    <TextView
+                        android:id="@+id/source_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Ho Chi Minh"
+                        android:textSize="@dimen/confirm_text_size" />
+
+                    <TextView
+                        android:id="@+id/dest_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Da Lat"
+                        android:textSize="@dimen/confirm_text_size" />
+
+                    <TextView
+                        android:id="@+id/departure_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="14:00"
+                        android:textSize="@dimen/confirm_text_size" />
+
+                    <TextView
+                        android:id="@+id/arrival_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="18:00"
+                        android:textSize="@dimen/confirm_text_size" />
+
+                    <TextView
+                        android:id="@+id/price_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="30000"
+                        android:textSize="@dimen/confirm_text_size" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Sat, 4, 2017"
+                        android:textSize="@dimen/confirm_text_size" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="How many seats"
+                    android:textSize="@dimen/confirm_text_size" />
+
+                <EditText
+                    android:id="@+id/editTextSeats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:editable="true"
+                    android:ems="10"
+                    android:focusableInTouchMode="true"
+                    android:inputType="number"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="@dimen/five_dp"
+                    android:text="Total: 0"
+                    android:textSize="36sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/order_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:background="@color/colorAccent"
+                android:text="Pay"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/darker_gray"
+                android:text="Cancel"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

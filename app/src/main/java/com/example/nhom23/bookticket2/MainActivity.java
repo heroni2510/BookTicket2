@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 
 
@@ -24,6 +25,7 @@ import com.google.firebase.database.DatabaseReference;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 DatabaseReference mData, mBusCom;
+    protected FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,8 +117,9 @@ DatabaseReference mData, mBusCom;
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        Fragment fragment;
         if (id == R.id.nav_camera) {
+            fragment = SelectRouteFragment.newInstance();
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
@@ -129,6 +132,7 @@ DatabaseReference mData, mBusCom;
             this.startActivity(intent);
         } else if (id == R.id.nav_send) {
 
+            mFirebaseAuth.signOut();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
