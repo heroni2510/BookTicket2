@@ -102,11 +102,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             public void onClick(View view) {
                 attemptLogin();
                 if(!TextUtils.isEmpty(mEmailView.getText().toString())|| !TextUtils.isEmpty(mPasswordView.getText().toString())){
-                    mloginProgess.setTitle("Logining User");
-                    mloginProgess.setMessage("Wait while login your account");
-                    mloginProgess.setCanceledOnTouchOutside(false);
-                    mloginProgess.show();
+                    //mloginProgess.setTitle("Logining User");
+                   // mloginProgess.setMessage("Wait while login your account");
+                   // mloginProgess.setCanceledOnTouchOutside(false);
+                   // mloginProgess.show();
                     LoginUser(mEmailView.getText().toString(),mPasswordView.getText().toString());
+
                 }
             }
         });
@@ -384,12 +385,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuthencation.getCurrentUser();
+                            Toast.makeText(LoginActivity.this, "Login success.",
+                                    Toast.LENGTH_SHORT).show();
 
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                            Toast.makeText(LoginActivity.this, "Login failed.",
                                     Toast.LENGTH_SHORT).show();
-
+                            Toast.makeText(LoginActivity.this,"Email or Password are incorrect",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(LoginActivity.this,LoginActivity.class);
+                            startActivity(intent);
                         }
 
                         // ...

@@ -2,8 +2,7 @@ package com.example.nhom23.bookticket2.model;
 
 public class User {
     private String name;
-
-    private String U_id;
+    private String u_id;
     private String phone;
     private String address;
     private String email;
@@ -14,7 +13,7 @@ public class User {
         this.email=email;
         this.phone=phone;
         this.name=name;
-        this.U_id=U_id;
+        this.u_id=U_id;
     }
 
     public String getEmail() {
@@ -44,7 +43,7 @@ public class User {
     }
 
     public String getU_id() {
-        return U_id;
+        return u_id;
     }
 
     public void setAddress(String address) {
@@ -58,6 +57,6 @@ public class User {
     }
 
     public void setU_id(String u_id) {
-        U_id = u_id;
+        u_id = u_id;
     }
 }

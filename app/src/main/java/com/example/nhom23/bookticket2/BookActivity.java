@@ -103,6 +103,7 @@ public class BookActivity extends AppCompatActivity {
         routeService.getAllRouteInFirebase(src,des,new RouteListener()   {
             @Override
             public void getAllProductSuccess(ArrayList<Route> routeList) {
+                if(routeList.isEmpty()){Toast.makeText(BookActivity.this,"This route is unavailable",Toast.LENGTH_SHORT).show();}
                 routeAdapter = new RouteAdapter(routeList,BookActivity.this);
                 recyclerView.setAdapter(routeAdapter);
                 routeAdapter.notifyDataSetChanged();

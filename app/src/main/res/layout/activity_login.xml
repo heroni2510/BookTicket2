@@ -75,9 +75,11 @@
 
             <Button
                 android:id="@+id/button2"
+                style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SIGN UP" />
+                android:text="SIGN UP"
+                android:textStyle="bold"/>
 
         </LinearLayout>
     </ScrollView>

@@ -46,48 +46,14 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.RouteHolder>
         routeHolder.tvPrice.setText(route.getPrice());
         routeHolder.tvDest.setText("Destination: " + route.getDest());
         routeHolder.tvSource.setText("Source: " + route.getSour());
-        FirebaseDatabase.getInstance().getReference().child("Route").child(route.getId_R())
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Route route1 = dataSnapshot.getValue(Route.class);
-                FirebaseDatabase.getInstance().getReference().child("Bus").child(route1.getBus()).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Bus bus = dataSnapshot.getValue(Bus.class);
-                        FirebaseDatabase.getInstance().getReference().child("BusCompany").child(bus.getBusCompany()).addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                BusCompany busCompany = dataSnapshot.getValue(BusCompany.class);
-                                routeHolder.tvCompany.setText("Company: " + busCompany.getName());
-                                CompanyName = busCompany.getName();
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+        routeHolder.tvDeparture.setText("Departure: "+ route.getDeparture());
+        routeHolder.tvCompany.setText("Company:" + route.getCompanyName());
         routeHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(activity,BookConfirm.class);
                 intent.putExtra("ROUTE_ID",route.getId_R());
-                intent.putExtra("COMPANY_NAME",CompanyName);
+                intent.putExtra("COMPANY_NAME",route.getCompanyName());
                 intent.putExtra("SOURCE",route.getSour());
                 intent.putExtra("DEST",route.getDest());
                 intent.putExtra("ARRIVAL",route.getArrival());
@@ -120,4 +86,5 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.RouteHolder>
             tvPrice = (TextView) itemView.findViewById(R.id.price_view);
         }
     }
+
 }

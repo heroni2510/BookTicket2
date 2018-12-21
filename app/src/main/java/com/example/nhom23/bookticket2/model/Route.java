@@ -1,8 +1,15 @@
 package com.example.nhom23.bookticket2.model;
 
+import android.support.annotation.NonNull;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.io.Serializable;
 
-public class Route implements Serializable {
+public class Route  {
     private String id_R;
     private String sour;
     private String dest;
@@ -10,9 +17,10 @@ public class Route implements Serializable {
     private String price;
     private String departure;
     private String arrival;
+    private String companyName;
 
     public Route(){}
-    public Route(String sour, String dest, String Bus, String price, String departure, String id_R, String arrival ){
+    public Route(String sour, String dest, String Bus, String price, String departure, String id_R, String arrival, String companyName ){
         this.bus=Bus;
         this.sour=sour;
         this.dest=dest;
@@ -20,8 +28,34 @@ public class Route implements Serializable {
         this.departure=departure;
         this.id_R=id_R;
         this.arrival=arrival;
+        this.companyName = companyName;
     }
-
+    public String getCompanyName(){
+//        FirebaseDatabase.getInstance().getReference().child("Bus").child(bus).addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Bus bus1 = dataSnapshot.getValue(Bus.class);
+//                FirebaseDatabase.getInstance().getReference().child("BusCompany").child(bus1.getBusCompany()).addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                        BusCompany busCompany = dataSnapshot.getValue(BusCompany.class);
+//                        CompanyName =  busCompany.getName();
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                    }
+//                });
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+        return companyName;
+    }
     public String getArrival() {
         return arrival;
     }

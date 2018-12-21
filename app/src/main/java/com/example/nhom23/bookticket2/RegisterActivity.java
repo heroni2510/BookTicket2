@@ -1,5 +1,7 @@
 package com.example.nhom23.bookticket2;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -55,7 +57,9 @@ public class RegisterActivity extends AppCompatActivity {
                             databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(Uid);
                             User user = new User(nameET.getText().toString(),Uid,phoneET.getText().toString(),addressET.getText().toString(),emailET.getText().toString());
                             databaseReference.setValue(user);
-                            Toast.makeText(RegisterActivity.this,"Dang ky thanh cong",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this,"Success",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(RegisterActivity.this,MainActivity.class);
+                            startActivity(intent);
                         } else {
 
                             Toast.makeText(RegisterActivity.this, "Authentication failed.",
